@@ -19,19 +19,23 @@ public class CompressCount {
 
     private static String compressBad(String str) {
 
-        String mystr = "";
+        String mystr = " ";
         int count = 1;
         char last = str.charAt(0);
-
-        for (int i = 1; i < str.length(); i++) {
-            if (str.charAt(i) == last) {
+        
+        
+        for(int i = 1; i<str.length(); i++){
+            
+            if(last == str.charAt(i)){
                 count++;
-            } else {
+            }else{
                 mystr += last + "" + count;
                 last = str.charAt(i);
                 count = 1;
             }
+            
         }
+        
         return mystr + last + count;
     }
 
